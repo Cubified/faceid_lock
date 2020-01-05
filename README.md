@@ -1,6 +1,6 @@
 # faceid\_lock
 
-A facial recognition lockscreen for X11.  Not recommended for use in security-sensitive situations, but it is a fun tinker toy.
+A facial recognition lockscreen for X11 and Microsoft Kinect.  Not recommended for use in security-sensitive situations, but still a fun tinker toy.
 
 ## Dependencies
 
@@ -45,6 +45,6 @@ If you've already compiled, run:
 
      make ldclean
 
-Then drop an image of your face into the `img` folder (you may have to create the folder if you have not compiled before).  It can be in any common format (JPG, PNG, etc.), but ensure that the `USERIMAGE_INPUT` variable in the `Makefile` corresponds with its filename.
+Then drop an image of your face into the `img` folder.  It can be in any common format (JPG, PNG, etc.), but ensure that the `USERIMAGE_INPUT` variable in the `Makefile` corresponds with its filename.
 
 This image is compiled into the binary, then accessed at runtime to avoid complications over file locations &ndash; the only downside of such an approach is that the final binary can swell significantly depending on the resolution of the chosen image.  As such, scaling your image down to a smaller resolution may be advantageous if this is a worry.

@@ -9,8 +9,8 @@ CFLAGS=-Iinclude -I/usr/include/freetype2
 FLAGS=-Os -pipe -s
 DEBUGFLAGS=-Og -pipe -g -std=c11 -pedantic
 
-USERIMAGE_INPUT=img/user.jpg
-USERIMAGE_OUTPUT=img/user.o
+USERIMAGE_INPUT=img/placeholder.jpg
+USERIMAGE_OUTPUT=img/placeholder.o
 
 INPUT=$(USERIMAGE_OUTPUT) src/faceid.c
 OUTPUT=faceid_lock
