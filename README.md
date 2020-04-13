@@ -4,7 +4,7 @@ A facial recognition lockscreen for X11 and Microsoft Kinect.  Not recommended f
 
 ## Dependencies
 
-- `python2.7`
+- `python3.8`
   - `face_recognition` (depends on `Pillow` and `numpy`)
   - Relevant C API package
 - `libfreenect`

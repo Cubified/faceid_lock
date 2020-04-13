@@ -9,8 +9,13 @@
 #include <X11/Xutil.h>
 #include <X11/Xft/Xft.h>
 
-#define MONITOR_WIDTH  1920
-#define MONITOR_HEIGHT 1080
+#ifdef DEBUG_BUILD
+#  define MONITOR_WIDTH  100
+#  define MONITOR_HEIGHT 100
+#else
+#  define MONITOR_WIDTH  1920
+#  define MONITOR_HEIGHT 1080
+#endif
 
 #define CENTER(dim, pos) ((dim-pos)/2)
 
@@ -55,7 +60,11 @@ int x_init(){
     dpy,
     root,
     0, 0,
+#ifdef DEBUG_BUILD
+    100, 100,
+#else
     XWidthOfScreen(scr), XHeightOfScreen(scr),
+#endif
     0,
     DefaultDepth(dpy, DefaultScreen(dpy)),
     InputOutput,
@@ -66,6 +75,7 @@ int x_init(){
 
   XSelectInput(dpy, win, SubstructureNotifyMask|ButtonPressMask);
 
+#ifndef DEBUG_BUILD
   XClientMessageEvent evt;
   evt.type = ClientMessage;
   evt.message_type = XInternAtom(dpy,"_NET_WM_STATE",0);
@@ -104,6 +114,9 @@ int x_init(){
     None,
     CurrentTime
   );
+#else
+  XMapWindow(dpy, win);
+#endif
 
   /*
    * XFT

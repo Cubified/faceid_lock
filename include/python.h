@@ -5,7 +5,7 @@
 #ifndef __PYTHON_H
 #define __PYTHON_H
 
-#include <python2.7/Python.h>
+#include <python3.8/Python.h>
 #include <stdlib.h>
 
 PyObject *module,
@@ -42,9 +42,9 @@ PyObject *load_image(char *filename){
   PyObject *str_pil, *str_np, *str_filename, *args_pil, *args_np, *im;
   PyObject *dict_pil, *dict_np, *func_pil, *func_np;
 
-  str_pil = PyString_FromString("PIL.Image");
-  str_np = PyString_FromString("numpy");
-  str_filename = PyString_FromString(filename);
+  str_pil = PyUnicode_FromString("PIL.Image");
+  str_np = PyUnicode_FromString("numpy");
+  str_filename = PyUnicode_FromString(filename);
 
   module_pil = PyImport_Import(str_pil);
   module_np = PyImport_Import(str_np);
@@ -80,9 +80,9 @@ int python_init(){
 
   Py_Initialize();
 
-  str_modulename = PyString_FromString("face_recognition");
-  str_imagepath = PyString_FromString("/tmp/user_image");
-  str_testimage = PyString_FromString("/tmp/faceid_lock.png");
+  str_modulename = PyUnicode_FromString("face_recognition");
+  str_imagepath = PyUnicode_FromString("/tmp/user_image");
+  str_testimage = PyUnicode_FromString("/tmp/faceid_lock.png");
 
   module = PyImport_Import(str_modulename);
   dict = PyModule_GetDict(module);

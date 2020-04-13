@@ -3,11 +3,11 @@ all: userimage faceid
 CC=gcc
 LD=ld
 
-LIBS=-lX11 -lXft -lfreenect -lfreenect_sync -lpython2.7
-CFLAGS=-Iinclude -I/usr/include/freetype2
+LIBS=-lX11 -lXft -lfreenect -lfreenect_sync -lpython3.8
+CFLAGS=-Iinclude -I/usr/include/freetype2 -I/usr/include/python3.8
 
 FLAGS=-Os -pipe -s
-DEBUGFLAGS=-Og -pipe -g -std=c11 -pedantic
+DEBUGFLAGS=-Og -pipe -g -std=c11 -pedantic -DDEBUG_BUILD
 
 USERIMAGE_INPUT=img/placeholder.jpg
 USERIMAGE_OUTPUT=img/placeholder.o
