@@ -1,6 +1,6 @@
 # faceid\_lock
 
-__Note: This repository has been obsoleted by [faceid_lock.py](https://github.com/Cubified/faceid_lock).__
+__Note: This repository has been obsoleted by [faceid_lock.py](https://github.com/Cubified/faceid_lock.py).__
 
 A facial recognition lockscreen for X11 and Microsoft Kinect.  Not recommended for use in security-sensitive situations, but still a fun tinker toy.
 
